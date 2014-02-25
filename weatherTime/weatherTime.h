@@ -9,14 +9,7 @@
 #include "Arduino.h"
 //add your includes for the project weatherDatas here
 #include <DS1307.h>
-
 //end of add your includes here
-#ifdef __cplusplus
-extern "C" {
-#endif
-#ifdef __cplusplus
-} // extern "C"
-#endif
 
 #define SHORTTIME 0
 #define LONGTIME 1
@@ -27,14 +20,18 @@ public:
 	time();
 	time(String value);
 	time(uint8_t vHour, uint8_t vMinute, uint8_t vSecond);
+
 	void setValue(String value);
 	void setValue(uint8_t vHour, uint8_t vMinute, uint8_t vSecond);
 	String getValue(int format);
 	String getNow(int format);
+
 	void setHour(uint8_t value);
 	uint8_t getHour();
+
 	void setMinute(uint8_t value);
 	uint8_t getMinute();
+
 	void setSecond(uint8_t value);
 	uint8_t getSecond();
 

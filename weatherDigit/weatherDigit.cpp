@@ -95,7 +95,7 @@ void loop()
 void storeData() {
 	//clock.getTime();
 	Serial.print(getDate(DATE_COURT));
-	Serial.print(String(lDate.getNow(0)));
+	Serial.print(String(lDate.getNow(LONGDATE)));
 	Serial.print(";");
 	Serial.print(getTime());
 	Serial.print(";");

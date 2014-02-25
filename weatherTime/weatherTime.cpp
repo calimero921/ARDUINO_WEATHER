@@ -15,6 +15,7 @@ time::time(String value) {
 time::time(uint8_t vHour, uint8_t vMinute, uint8_t vSecond) {
 	setValue(vHour, vMinute, vSecond);
 }
+
 void time::setValue(String value) {
 	char sep = "/";
 	String val1;
@@ -38,7 +39,18 @@ void time::setValue(uint8_t vHour, uint8_t vMinute, uint8_t vSecond) {
 	setSecond(vSecond);
 }
 String time::getValue(int format) {
-	return String(getHour()) + ":" + String(getMinute()) + ":" + String(getSecond());
+	String result;
+
+	switch (format) {
+		case LONGTIME:
+			result = String(getHour()) + ":" + String(getMinute()) + ":" + String(getSecond());
+			break;
+		case SHORTTIME:
+		default:
+			result = String(getHour()) + ":" + String(getMinute());
+			break;
+	}
+	return result;
 }
 String time::getNow(int format) {
 	clock.getTime();
@@ -47,18 +59,21 @@ String time::getNow(int format) {
 	setSecond(clock.second);
 	return getValue(format);
 }
+
 void time::setHour(uint8_t value) {
 	lHour = value;
 }
 uint8_t time::getHour() {
 	return lHour;
 }
+
 void time::setMinute(uint8_t value) {
 	lMinute = value;
 }
 uint8_t time::getMinute() {
 	return lMinute;
 }
+
 void time::setSecond(uint8_t value) {
 	lSecond = value;
 }

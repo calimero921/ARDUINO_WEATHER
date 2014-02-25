@@ -3,9 +3,7 @@
 	<name>weatherDigit</name>
 	<comment></comment>
 	<projects>
-		<project>weatherDate</project>
 		<project>weatherSensors</project>
-		<project>weatherTime</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -68,6 +66,11 @@
 			<name>Libraries/Wire</name>
 			<type>2</type>
 			<locationURI>ArduinoHardwareLibPath/Wire</locationURI>
+		</link>
+		<link>
+			<name>Libraries/weatherDate</name>
+			<type>2</type>
+			<locationURI>ArduinoPivateLibPath/weatherDate</locationURI>
 		</link>
 		<link>
 			<name>arduino/core</name>
