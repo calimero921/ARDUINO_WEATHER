@@ -95,9 +95,9 @@ void loop()
 void storeData() {
 	//clock.getTime();
 	Serial.print(getDate(DATE_COURT));
-	Serial.print(String(lDate.getNow(LONGDATE)));
+	Serial.print(lDate.getNow(SHORTDATE));
 	Serial.print(";");
-	Serial.print(getTime());
+	Serial.print(lTime.getNow(SHORTTIME));
 	Serial.print(";");
 	Serial.print(sensors.getPressureStr());
 	Serial.print(";");
@@ -110,52 +110,15 @@ void storeData() {
 	Serial.print(sensors.getHumidityStr());
 	Serial.println(";");
 }
-String getDate(int longueur) {
-	String result = "";
-	char* Days[]={"---","Lun","Mar","Mer","Jeu","Ven","Sam","Dim"};
-	char* Months[]={"---","Jan","Fev","Mar","Avr","Mai","Jun","Jui","Aou","Sep","Oct","Nov","Dec"};
-
-	//date
-	clock.getTime();
-	switch (longueur) {
-		case DATE_LONG:
-			result = result + String(Days[clock.dayOfWeek]) + " ";
-			result = result + clock.dayOfMonth + " ";
-			result = result + String(Months[clock.month]) + " ";
-			result = result + "20" + String(clock.year) + "  ";
-			break;
-		case DATE_COURT:
-		default:
-			result = result + String(clock.hour) + ":";
-			result = result + String(clock.minute) + ":";
-			result = result + String(clock.second);
-			break;
-	}
-
-	return result;
-}
-String getTime(){
-	String result = "";
-
-	//heure
-	clock.getTime();
-	result = result + String(clock.hour) + ":";
-	if (clock.minute<10) {result = result + "0";}
-	result = result + String(clock.minute) + ":";
-	if (clock.second<10) {result = result + "0";}
-	result = result + String(clock.second);
-
-	return result;
-}
 void displayInformation() {
 	String result = "";
 	int unite;
 	int decim;
 
 	//date
-	GD.cmd_text(0, 0, 30, 0, getDate(DATE_LONG).c_str());
+	GD.cmd_text(0, 0, 30, 0, lDate.getNow(LONGDATE).c_str());
 	//heure
-	GD.cmd_text(0, 35, 28, 0, getTime().c_str());
+	GD.cmd_text(0, 35, 28, 0, lTime.getNow(LONGTIME).c_str());
 
 	//pression
 	result = "pres " + sensors.getPressureStr() + "HPa";

@@ -33,6 +33,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/Barometer}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/HumidityTemperature}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/weatherDate}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/weatherTime}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.272709778" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>
@@ -50,6 +51,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/Barometer}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/HumidityTemperature}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/weatherDate}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherDigit/Libraries/weatherTime}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.1952977622" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
 							</tool>
