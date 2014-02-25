@@ -1,6 +1,8 @@
 // Do not remove the include below
 #include <weatherDigit.h>
 #include <weatherSensors.h>
+#include <weatherDate.h>
+#include <weatherTime.h>
 
 #include <TimerOne.h>
 #include <DS1307.h>
@@ -29,8 +31,8 @@ weatherSensors sensors;
 
 //gestion de l'horloge
 DS1307 clock;
-date localDate;
-time localTime;
+date lDate;
+time lTime;
 
 //gestion de l'écran
 int displayAction;
@@ -93,7 +95,7 @@ void loop()
 void storeData() {
 	//clock.getTime();
 	Serial.print(getDate(DATE_COURT));
-	Serial.print(localDate.getNow(0));
+	Serial.print(String(lDate.getNow(0)));
 	Serial.print(";");
 	Serial.print(getTime());
 	Serial.print(";");

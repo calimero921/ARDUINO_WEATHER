@@ -6,6 +6,17 @@
  */
 #include <weatherdate.h>
 
+//private
+uint16_t mod(uint16_t value, uint16_t divider) {
+	uint16_t result;
+	uint16_t divide;
+
+	divide = int(value/divider);
+	result = value - (divide * divider);
+	return result;
+}
+
+//public
 date::date() {
 	setValue(0, 0, 0);
 }
@@ -15,6 +26,7 @@ date::date(String value) {
 date::date(uint8_t vDay, uint8_t vMonth, uint16_t vYear) {
 	setValue(vDay, vMonth, vYear);
 }
+
 void date::setValue(String value) {
 	char sep = "/";
 	String val1;
@@ -42,7 +54,7 @@ String date::getValue(int format) {
 	switch (format) {
 		case LONGDATE:
 		case FULLDATE:
-			result = getDayStr(format) + " " + String(getDay()) + " " + getMonthStr(format) + " " + String(getYear());
+			result = getDayOfWeekStr(format) + " " + String(getDay()) + " " + getMonthStr(format) + " " + String(getYear());
 			break;
 		case SHORTDATE:
 		default:
@@ -58,43 +70,19 @@ String date::getNow(int format) {
 	setYear(clock.year);
 	return getValue(format);
 }
+
 void date::setYear(uint16_t value) {
 	lYear = value;
 }
 uint16_t date::getYear() {
 	return lYear;
 }
+
 void date::setMonth(uint8_t value) {
 	lMonth = value;
 }
 uint8_t date::getMonth() {
 	return lMonth;
-}
-void date::setDay(uint8_t value) {
-	lDay = value;
-}
-uint8_t date::getDay() {
-	return lDay;
-}
-
-String date::getDayStr(int format) {
-	String result;
-	char* ShortDays[]={"---","Lun","Mar","Mer","Jeu","Ven","Sam","Dim"};
-	char* LongDays[]={"---","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samdi","Dimanche"};
-
-	int dayOfWeek = mod ((uint16_t) (getDay() + getYear() + int(getYear()/4) - int(getYear()/100) + int(getYear()/400) + int((31*getMonth())/12)),7);
-
-	//date
-	switch (format) {
-		case FULLDATE:
-			result = String(LongDays[dayOfWeek]);
-			break;
-		case LONGDATE:
-		default:
-			result = String(ShortDays[dayOfWeek]);
-			break;
-	}
-	return result;
 }
 String date::getMonthStr(int format) {
 	String result;
@@ -113,11 +101,30 @@ String date::getMonthStr(int format) {
 	}
 	return result;
 }
-uint16_t mod(uint16_t value, uint16_t divider) {
-	uint16_t result;
-	uint16_t divide;
 
-	divide = int(value/divider);
-	result = value - (divide * divider);
+void date::setDay(uint8_t value) {
+	lDay = value;
+}
+uint8_t date::getDay() {
+	return lDay;
+}
+uint8_t date::getDayOfWeek() {
+	return mod ((uint16_t) (getDay() + getYear() + int(getYear()/4) - int(getYear()/100) + int(getYear()/400) + int((31*getMonth())/12)),7);
+}
+String date::getDayOfWeekStr(int format) {
+	String result;
+	char* ShortDays[]={"---","Lun","Mar","Mer","Jeu","Ven","Sam","Dim"};
+	char* LongDays[]={"---","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samdi","Dimanche"};
+
+	//date
+	switch (format) {
+		case FULLDATE:
+			result = String(LongDays[getDayOfWeek()]);
+			break;
+		case LONGDATE:
+		default:
+			result = String(ShortDays[getDayOfWeek()]);
+			break;
+	}
 	return result;
 }
