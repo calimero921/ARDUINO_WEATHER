@@ -3,6 +3,7 @@
 	<name>weatherSensors</name>
 	<comment></comment>
 	<projects>
+		<project>weatherString</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

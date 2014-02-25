@@ -1,6 +1,32 @@
 // Do not remove the include below
 #include "weatherString.h"
 
+String formatValue(float value, int intMask, int decMask, bool sigMask){
+	String result;
+	int unite = int(value);
+
+	//ajoute un espace pour se conformer au mask de signe
+	if (sigMask && (unite>=0)){result =+ " ";}
+
+	//ajoute des espaces pour se conformer au mask
+	for (int cpt = 0; cpt < intMask; cpt++) {
+		if (abs(unite)<pow(10,cpt)){result =+ " ";}
+	}
+	result =+ String(unite);
+
+	//formate en fonction des décimales
+	if (decMask > 0) {
+		result =+ ".";
+		//decoupage des décimales
+		int decim = round(pow(10,decMask) * (value-unite));
+		if (decim == 0) {
+
+		} else {
+			result =+ String(decim);
+		}
+	}
+	return result;
+}
 String substr(String string, int start, int length) {
 	String result;
 	int end;

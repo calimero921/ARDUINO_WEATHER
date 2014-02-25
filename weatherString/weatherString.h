@@ -21,6 +21,7 @@ void setup();
 #endif
 
 //add your function definitions for the project weatherString here
+String formatValue(float value, int intMask = 1, int decMask = 0, bool sigMask = false);
 String substr(String string, int start, int length);
 String substr(String string, int start);
 int strpos(String string, String needle, int offset);

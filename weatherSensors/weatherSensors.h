@@ -8,11 +8,11 @@
 #define _weatherSensors_H_
 
 //add your includes for the project weatherDatas here
-#include <Arduino.h>
-#include <Wire.h>
+#include <weatherString.h>
 #include <Barometer.h>
 #include <DHT.h>
-
+#include <Arduino.h>
+#include <Wire.h>
 
 //end of add your includes here
 #ifdef __cplusplus
@@ -50,7 +50,6 @@ public:
 	String getTemperatureStr();
 
 private :
-	String formatValue(float value, int intMask = 1, int decMask = 0, bool sigMask = false);
 };
 
 #endif /* weatherSensors_H_ */
