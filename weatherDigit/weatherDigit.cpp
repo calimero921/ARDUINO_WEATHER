@@ -65,37 +65,37 @@ void setup() {
 	GD.cmd_text(0, 0, 26, 0, "Wheather init");
 	GD.swap();
 	Serial.begin(9600);
-	delay(500);
+	//delay(500);
 
 	GD.Clear();
 	GD.cmd_text(0, 0, 26, 0, "Barometer init");
 	GD.swap();
 	myBarometer.init();                         //initialisation du barometre
-	delay(500);
+	//delay(500);
 
 	GD.Clear();
 	GD.cmd_text(0, 0, 26, 0, "Thermometer init");
 	GD.swap();
 	dht.begin();
-	delay(500);
+	//delay(500);
 
 	GD.Clear();
 	GD.cmd_text(0, 0, 26, 0, "Clock init");
 	GD.swap();
 	clock.begin();
-	delay(500);
+	//delay(500);
 
 	GD.Clear();
 	GD.cmd_text(0, 0, 26, 0, "Timer init");
 	GD.swap();
 	//Timer1.initialize(500000);                  //activation du timer pour une interruption chaque seconde
 	//Timer1.attachInterrupt(getData);            //appel getData ˆ chaque interruption
-  	delay(500);
+  	//delay(500);
 
 	GD.Clear();
   	GD.cmd_text(0, 0, 26, 0, "Wheather ready");
 	GD.swap();
-	delay(500);
+	//delay(500);
 
 	displayAction = MAINSCREEN;
 	started = true;
