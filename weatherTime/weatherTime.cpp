@@ -37,8 +37,15 @@ void time::setValue(uint8_t vHour, uint8_t vMinute, uint8_t vSecond) {
 	setMinute(vMinute);
 	setSecond(vSecond);
 }
-String time::getValue() {
+String time::getValue(int format) {
 	return String(getHour()) + ":" + String(getMinute()) + ":" + String(getSecond());
+}
+String time::getNow(int format) {
+	clock.getTime();
+	setHour(clock.hour);
+	setMinute(clock.minute);
+	setSecond(clock.second);
+	return getValue(format);
 }
 void time::setHour(uint8_t value) {
 	lHour = value;

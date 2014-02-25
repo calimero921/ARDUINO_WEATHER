@@ -23,7 +23,6 @@ void setup();
 
 //add your function definitions for the project Weather here
 void storeData();
-
 void displayDate();
 String getTime();
 String getDate(int ln);

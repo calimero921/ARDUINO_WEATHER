@@ -3,7 +3,9 @@
 	<name>weatherDigit</name>
 	<comment></comment>
 	<projects>
+		<project>weatherDate</project>
 		<project>weatherSensors</project>
+		<project>weatherTime</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

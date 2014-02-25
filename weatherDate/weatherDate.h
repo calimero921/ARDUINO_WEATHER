@@ -6,11 +6,14 @@
 
 #ifndef _weatherDate_H_
 #define _weatherDate_H_
-#include "Arduino.h"
-//add your includes for the project weatherDatas here
 
+//#define SHORTDATE 0
+//#define LONGDATE 1
+//#define FULLDATE 2
 
-//end of add your includes here
+#include <Arduino.h>
+#include <DS1307.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -21,12 +24,17 @@ extern "C" {
 //add your function definitions for the project weatherDatas here
 class date {
 public:
+	const int SHORTDATE = 0;
+	const int LONGDATE = 1;
+	const int FULLDATE = 2;
+
 	date();
 	date(String value);
 	date(uint8_t vDay, uint8_t vMonth, uint16_t vYear);
 	void setValue(String value);
 	void setValue(uint8_t vDay, uint8_t vMonth, uint16_t vYear);
-	String getValue();
+	String getValue(int format);
+	String getNow(int format);
 	void setYear(uint16_t value);
 	uint16_t getYear();
 	void setMonth(uint8_t value);
@@ -38,6 +46,13 @@ private:
 	uint16_t lYear;
 	uint8_t lMonth;
 	uint8_t lDay;
+
+	//activation de l'horloge
+	DS1307 clock;
+
+	String getDayStr(int format);
+	String getMonthStr(int format);
+	uint16_t mod(uint16_t value, uint16_t divider);
 };
 
 #endif /* weatherDate_H_ */

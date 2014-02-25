@@ -28,6 +28,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>Libraries/RTC</name>
+			<type>2</type>
+			<locationURI>ArduinoPivateLibPath/RTC</locationURI>
+		</link>
+		<link>
 			<name>arduino/core</name>
 			<type>2</type>
 			<locationURI>ArduinoPlatformPath/cores/arduino</locationURI>

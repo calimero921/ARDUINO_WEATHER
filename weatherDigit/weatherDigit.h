@@ -8,6 +8,8 @@
 #define _weatherDigit_H_
 #include "Arduino.h"
 #include "weatherSensors.h"
+#include "weatherDate.h"
+#include "weatherTime.h"
 //add your includes for the project weather_digit here
 
 
@@ -23,7 +25,6 @@ void setup();
 
 //add your function definitions for the project Weather here
 void storeData();
-void getData();
 void displayDate();
 String getTime();
 String getDate(int ln);
