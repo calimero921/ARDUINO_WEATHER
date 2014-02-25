@@ -1,6 +1,6 @@
 // Do not remove the include below
 
-#include "weather4Digit.h"
+#include <weather4Digit.h>
 
 #include <TimerOne.h>
 #include <DS1307.h>
