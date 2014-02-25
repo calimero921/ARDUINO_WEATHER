@@ -123,4 +123,3 @@ String weatherSensors::getTemperatureStr() {
 	if (abs(value<10)) {result += " ";};
 	return result;
 }
-
