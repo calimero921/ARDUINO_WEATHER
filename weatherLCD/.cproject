@@ -28,6 +28,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/RTC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/Wire}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/Wire/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/weatherSensors}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.1464922017" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>
@@ -40,6 +41,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/RTC}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/Wire}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/Wire/utility}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/weatherLCD/Libraries/weatherSensors}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.2034855039" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
 							</tool>

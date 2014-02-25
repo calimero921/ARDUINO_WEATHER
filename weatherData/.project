@@ -3,8 +3,6 @@
 	<name>weatherData</name>
 	<comment></comment>
 	<projects>
-		<project>weatherDate</project>
-		<project>weatherTime</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -28,6 +26,16 @@
 		<nature>it.baeyens.arduinonature</nature>
 	</natures>
 	<linkedResources>
+		<link>
+			<name>Libraries/weatherDate</name>
+			<type>2</type>
+			<locationURI>ArduinoPivateLibPath/weatherDate</locationURI>
+		</link>
+		<link>
+			<name>Libraries/weatherTime</name>
+			<type>2</type>
+			<locationURI>ArduinoPivateLibPath/weatherTime</locationURI>
+		</link>
 		<link>
 			<name>arduino/core</name>
 			<type>2</type>
