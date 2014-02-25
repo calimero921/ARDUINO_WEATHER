@@ -4,11 +4,10 @@
 // - extern variable definitions
 // In the appropriate section
 
-#ifndef _weather4Digit_H_
-#define _weather4Digit_H_
+#ifndef _WEATHER4DIGIT_H_
+#define _WEATHER4DIGIT_H_
 #include "Arduino.h"
-//add your includes for the project weather4Digit here
-
+//add your includes for the project Weather here
 
 //end of add your includes here
 #ifdef __cplusplus
@@ -20,10 +19,13 @@ void setup();
 } // extern "C"
 #endif
 
-//add your function definitions for the project weather4Digit here
-
-
-
+//add your function definitions for the project Weather here
+void storeData();
+void getData();
+void displayDate();
+void displayTimeDigit();
+void displayTimeLCD();
+void displayInformation();
 
 //Do not add code below this line
-#endif /* _weather4Digit_H_ */
+#endif /* _WEATHER4DIGIT_H_ */
